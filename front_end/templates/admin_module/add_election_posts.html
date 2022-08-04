@@ -1,0 +1,17 @@
+{%extends 'admin_module/base.html' %}
+
+{%block title%} Add Election Posts {%endblock%}
+
+{%block first%} 
+    <center><h1>ADD ELECTION POST LIST</h1></center>
+        
+    <form name = 'student_form' method = 'POST' action = '' enctype="multipart/form-data">
+        {% csrf_token %}
+        &nbsp;&nbsp;&nbsp;Upload the list: <input type = 'file' name = 'election_post_list' required>
+    
+        <br>
+        <br>
+        &nbsp;&nbsp;&nbsp; <a href = ''><button type="submit" class="btn btn-success">UPLOAD</button></a>
+    </form>
+
+{%endblock%}

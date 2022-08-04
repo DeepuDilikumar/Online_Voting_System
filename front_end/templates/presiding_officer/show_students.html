@@ -1,0 +1,50 @@
+{%extends 'presiding_officer/base.html' %}
+
+{%block title%}Uploaded Student List {%endblock%}
+
+{%block first%} 
+
+    {%if student_list%}
+
+    <script>function hello() { alert('hello world') }</script>
+    &nbsp;&nbsp;
+    <div class="container">
+        <table class = 'table table-stripped' >
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>ROLL NUMBER</th>
+                    <th>ADM. NO.</th>
+                    <th>DEPARTMENT</th>
+                    <th>YEAR</th>
+                    <th>GENDER</th>
+                    <th>DEGREE</th>
+                    <th>PHONE NO.</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for student in student_list%}
+                <tr>
+                    <th>{{student.name}}</th>
+                    <th>{{student.roll_no}}</th>
+                    <th>{{student.adm_no}}</th>
+                    <th>{{student.department}}</th>
+                    <th>{{student.year}}</th>
+                    <th>{{student.gender}}</th>
+                    <th>{{student.degree}}</th>
+                    <th>{{student.phone_no}}</th>
+                    <th><button name = '{{student.adm_no}}' type="submit" class="btn btn-success" onclick="hello()">Verify</button></th>
+                    
+                </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+        {%else%}
+          <br><br><br>
+          
+          <div class="alert alert-warning" role="alert">
+            <h3>&nbsp;&nbsp;&nbsp;Student List Not Yet Uploaded!</h3>
+          </div>
+        {%endif%}
+    </div>
+{%endblock%}

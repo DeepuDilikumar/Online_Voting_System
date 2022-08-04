@@ -1,0 +1,23 @@
+{% extends 'presiding_officer/base.html' %}
+
+{%block title%} Generate OTP {%endblock%}
+
+
+{%block first%}
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+               <h4>(The Newly generated OTP) </h4>
+               <div class="alert alert-warning" role="alert">
+                   <pre> <h1>               {{otp}}</h1></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <pre>
+                                              <a href = ''><button type="button" class="btn btn-primary">Generate New OTP</button></a>
+    </pre>
+{%endblock%}

@@ -1,0 +1,38 @@
+{%extends 'voter/base.html' %}
+
+{%block title%}Cast Your Vote!{%endblock%}
+
+{%block first %}
+<h2><center>CAST YOUR VOTES!</center></h2>
+<form name = 'vote' method = 'POST' action = ''>
+    <style>
+        
+    </style>
+
+    {%csrf_token%}
+    {%for key, post in posts.items %}
+         <br>
+         <br>
+         <div class="card">
+            <div class="card-body">
+                <h3>{{post.post_name}}</h3>
+                <br>
+                <br>
+                {% for cand in post.candidates%}
+                   {{cand.first_name}} {{cand.last_name}}
+                   <input type = 'radio' name = '{{cand.position_id}}' value = '{{cand.candidate_id}} ' required> 
+                   &nbsp;
+                   &nbsp;
+                {% endfor %}       
+            </div>
+          </div>
+         
+    {% endfor %}
+    
+    <br>
+    <br>
+    <pre>       <input type = 'submit' name = 'submit' class = 'btn btn-success' value = 'Submit Your Votes'></pre>
+    </form>
+   
+
+{%endblock%}

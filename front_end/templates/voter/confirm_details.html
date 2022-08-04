@@ -1,0 +1,22 @@
+{%extends 'voter/base.html' %}
+
+{%block title%}Confirm Details{%endblock%}
+
+{%block first%} 
+    <div class="alert alert-warning" role="alert">
+        <h4>WARNING:  Report to the Presiding officer if the details shown below is not yours!</h4> 
+    </div>
+
+    <pre>
+    
+    Name          :{{student.name}} <br>
+    Roll No       :{{student.roll_no}} <br>
+    Admission No  :{{student.adm_no}} <br>
+    Department    :{{student.department}}<br>
+    Year          :{{student.year}} <br>
+    Gender        :{{student.gender}} <br><br>
+        <a href = 'vote'><button type="submit" class="btn btn-primary">Proceed to vote</button></a>
+    </pre>
+
+{%endblock%}
+

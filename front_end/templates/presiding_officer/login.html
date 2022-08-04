@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SCTCE Online Voting</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css ' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navbar-Right-Links.css' %}">
+
+
+    {%for message in messages%}
+        <script> alert('{{message}}') </script>
+    {%endfor%}
+    
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md py-3" style="color: var(--bs-blue);background: var(--bs-white);box-shadow: 0px 0px 4px var(--bs-pink);">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><img class="shadow-none" src="{% static 'assets/img/sctce_full_logo.jpg' %}" width="550"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-2">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="{% static 'index.html' %}">Home</a></li>
+                        <li class="nav-item"></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul><a class="btn btn-primary ms-md-2" role="button" href="{% static 'admin_login.html' %}">Admin Login</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="heading">
+                        <h1 class="text-center"><strong>SCTCE&nbsp; ONLINE&nbsp; VOTING&nbsp; SYSTEM</strong></h1>
+                        <h4 class="text-center">(Election Staff Login)</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sign-in-container" class="p-5">
+            <form class="text-start user" method = "POST" action = "">
+                {% csrf_token %}
+                <div id="username-input" name = "username" class="mb-3"><input class="border rounded form-control d-sm-block d-md-block form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username..." name="username" required=""></div>
+                <div id="employee-ID-input" name = "employee_id"><input class="form-control d-sm-block d-md-block border rounded form-control form-control-user" type="text" placeholder="Enter Employee ID..." name = 'employee_id' required=""></div>
+                <div id="password-input" name = "password" class="mb-3"><input class="border rounded form-control d-sm-block d-md-block form-control-user" type="password" id="exampleInputPassword" placeholder="Enter Password..." name="password" required=""></div><button class="btn btn-primary border rounded d-block btn-user w-100" type="submit">Login</button>
+                <hr>
+                <hr>
+            </form>
+            <div class="text-center"><a class="small" href="z__forgot_password.html">Forgot Password?</a></div>
+        </div>
+    </div>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+</body>
+
+</html>

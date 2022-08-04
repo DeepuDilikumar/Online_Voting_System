@@ -1,0 +1,16 @@
+{% extends 'voter/base.html' %}
+
+{%block title%}Instructions {%endblock%}
+
+{%block first%}
+<script>alert('Welcome to SCTCE Elections 2023!')</script>
+
+     <div class="alert alert-warning" role="alert">
+        <h1>You have successfully voted...</h1><br><br>
+
+        <br>
+        <br>
+        <pre>        <a href = "{% url 'voter_login' %}"><button type="submit" class="btn btn-primary">Click here to goto Login Page!</button></a></pre>
+      </div>
+
+{%endblock%}

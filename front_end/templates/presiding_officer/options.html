@@ -1,0 +1,61 @@
+ 
+ {% extends 'presiding_officer/base.html' %}
+
+ {%block title%}
+     Presiding Officer Options
+ {%endblock%}
+
+       
+
+       
+  {%block first%}
+            {{message}}
+            {%for message in messages%}
+                <script>window.alert('{{message}}')</script>
+            {%endfor%}
+             <div class="container-fluid">
+                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                     <h2 class="text-dark mb-0">Generate OTP / Suspend Students</h2>
+                 </div>
+                 <div class="row">
+                     <div class="col">
+                         <div class="row">
+                             <div class="col-lg-6 mb-4">
+                                 <div class="card textwhite bg-primary text-white shadow">
+                                    
+                                     <div class="card-body">
+                                         <a href = 'options/generate_otp' style="color:white" style="text-decoration:none" >Generate New OTP</a>
+                                         <p class="text-white-50 small m-0">(Create a One Time Password)</p>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-6 mb-4">
+                                 <div class="card textwhite bg-success text-white shadow">
+                                     <div class="card-body">
+                                         <a href = 'options/add_student' style="color:white"><p class="m-0">Upload Student List</p></a>
+                                         <p class="text-white-50 small m-0">(Upload excel/ csv file containing student list)</p> 
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-6 mb-4">
+                                 <div class="card textwhite bg-info text-white shadow">
+                                     <div class="card-body">
+                                         <p class="m-0">Suspend Student From Voting</p>
+                                         <p class="text-white-50 small m-0">(Suspend a student from the list from voting)</p>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-lg-6 mb-4">
+                                 <div class="card textwhite bg-warning text-white shadow"></div>
+                                 <div class="card textwhite bg-secondary text-white shadow">
+                                     <div class="card-body">
+                                         <p class="m-0">Grant Suspended Student To Vote</p>
+                                         <p class="text-white-50 small m-0">(Grant the voting rights to suspended students)</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+ {%endblock%}

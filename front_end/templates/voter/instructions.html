@@ -1,0 +1,26 @@
+{% extends 'voter/base.html' %}
+
+{%block title%}Instructions {%endblock%}
+
+{%block first%}
+<script>alert('Welcome to SCTCE Elections 2023!')</script>
+
+     <div class="alert alert-warning" role="alert">
+        <h1>IMPORTANT INSTRUCTIONS!!</h1><br><br>
+
+        1. This is a Web-proctored online voting process for the SCTCE general election.  <br>
+        2. Election time will strictly be between 9:00 AM to 3:00 PM. <br>
+        3. Identification proof must be carried to the polling stations. <br>
+        4. Voters must strictly adhere to the guidelines given by the corresponding preciding officer. <br>
+        4. You can attempt to vote only once.<br>
+        5. Any malpractice if found, will have severe consequences. <br>
+        6. Eligible candidate posts will be shown for each individual voter. <br> 
+        7. Voters must select the candidates from the list provided in the webpage. <br>
+        8. OTP and login credentials will be provided at the polling booths <br>
+        9. You can get familiar with the test environment and check their system compatibility through this system-readiness test<br>
+        <br>
+        <br>
+        <pre>        <a href = "{% url 'voter_confirm_details' %}"><button type="submit" class="btn btn-primary">I've read all the instructions</button></a></pre>
+      </div>
+
+{%endblock%}
